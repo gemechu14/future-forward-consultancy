@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
@@ -127,9 +128,28 @@ export default function Navbar() {
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center"
               >
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">FF</span>
-                </div>
+                {/* <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center bg-white dark:bg-transparent">
+                  <Image
+                    src="/assets/logo.png"
+                    alt="Future Forward Logo"
+                    width={50}
+                    height={50}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div> */}
+
+                <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center bg-white dark:bg-transparent">
+  <Image
+    src="/assets/logo.png"
+    alt="Future Forward Logo"
+    width={50}
+    height={50}
+    className="w-full h-full object-contain" // Change to object-contain for no cropping
+    priority
+  />
+</div>
+
                 <span className="ml-3 text-lg font-bold text-gray-900 dark:text-white hidden sm:block">
                   Future Forward
                 </span>

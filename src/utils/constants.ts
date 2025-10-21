@@ -14,8 +14,8 @@ export const COMPANY_INFO = {
   address: {
   street: 'Lideta',
   city: 'Addis Ababa',
-  // state: 'Addis Ababa',
-  // zip: 'Unknown',
+  state: '',
+  zip: '',
   country: 'Ethiopia',
 }
 ,

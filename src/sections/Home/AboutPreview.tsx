@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Target, Eye, Heart, ArrowRight } from 'lucide-react';
 import SectionHeader from '@/components/SectionHeader';
-
+import Image from 'next/image';
 /**
  * AboutPreview Component
  * Preview of company mission, vision, and values on the home page
@@ -49,21 +49,7 @@ export default function AboutPreview() {
               </p>
             </div>
 
-            {/* Key Points */}
-            {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-              <div className="text-center p-4 bg-primary/5 dark:bg-primary/10 rounded-lg">
-                <div className="text-2xl font-bold text-primary mb-1">15+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
-              </div>
-              <div className="text-center p-4 bg-secondary/5 dark:bg-secondary/10 rounded-lg">
-                <div className="text-2xl font-bold text-secondary mb-1">250+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Clients Served</div>
-              </div>
-              <div className="text-center p-4 bg-primary/5 dark:bg-primary/10 rounded-lg">
-                <div className="text-2xl font-bold text-primary mb-1">98%</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Success Rate</div>
-              </div>
-            </div> */}
+     
           </motion.div>
 
           {/* Visual Content - Right Side */}
@@ -77,13 +63,19 @@ export default function AboutPreview() {
             {/* Main Visual Card */}
             <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 rounded-3xl p-8 shadow-2xl">
               {/* Company Logo/Icon */}
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ duration: 0.3 }}
-                className="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"
-              >
-                <span className="text-white font-bold text-4xl">FFdfdfdfdf</span>
-              </motion.div>
+      
+   <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center bg-white dark:bg-transparent">
+                  <Image
+                    src="/assets/logo.png"
+                    alt="Future Forward Logo"
+                    width={150}
+                    height={150}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div>
+
+              {/* </motion.div> */}
 
               {/* Floating Elements */}
               <motion.div
@@ -94,21 +86,7 @@ export default function AboutPreview() {
                 {/* <Target className="w-8 h-8 text-secondary" /> */}
               </motion.div>
 
-              {/* <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="absolute bottom-4 left-4 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center"
-              >
-                <Heart className="w-6 h-6 text-primary" />
-              </motion.div> */}
-
-              {/* <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
-                className="absolute top-1/2 -right-6 w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center"
-              >
-                <Eye className="w-5 h-5 text-secondary" />
-              </motion.div> */}
+         
 
               {/* Company Name */}
               <div className="text-center">

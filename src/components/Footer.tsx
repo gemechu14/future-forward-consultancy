@@ -1,16 +1,29 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, ArrowUp } from 'lucide-react';
 import { COMPANY_INFO, NAVIGATION_LINKS } from '@/utils/constants';
-
+import Image from 'next/image';
 /**
  * Footer Component
  * Comprehensive footer with company info, navigation, social links, and back-to-top button
  */
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  // Handle scroll-to-top button visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when scrolled more than 300px from top
+      setShowScrollButton(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -24,9 +37,19 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">FF1</span>
+                  <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center bg-transparent dark:bg-transparent">
+                <Image
+                  src="/assets/logo.png"
+                  alt="Future Forward Logo"
+                  width={50}
+                  height={50}
+                  className="w-full h-full object-contain" // Change to object-contain for no cropping
+                  priority
+                />
               </div>
+              {/* <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-xl">FF1</span>
+              </div> */}
               <span className="text-lg font-bold text-white">
                 Future Forward
               </span>
@@ -152,18 +175,23 @@ export default function Footer() {
       </div>
 
       {/* Back to Top Button */}
-      <motion.button
-        onClick={scrollToTop}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary-600 text-white rounded-full shadow-lg z-40 transition-colors"
-        aria-label="Back to top"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-      >
-        <ArrowUp className="w-6 h-6" />
-      </motion.button>
+      <AnimatePresence>
+        {showScrollButton && (
+          <motion.button
+            onClick={scrollToTop}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary-600 text-white rounded-full shadow-lg z-40 transition-colors"
+            aria-label="Back to top"
+            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ArrowUp className="w-6 h-6" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </footer>
   );
 }
