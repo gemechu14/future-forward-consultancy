@@ -2,37 +2,52 @@ export const COMPANY_INFO = {
   name: 'Future Forward Research and Business Consultancy',
   tagline: 'Transforming Businesses, Shaping Futures',
   email: 'info@futureforwardconsultancy.com',
-  phone: '+1 (555) 123-4567',
+  phone: '+251777739988',
+  // address: {
+  //   street: '123 Business Avenue, Suite 500',
+  //   city: 'New York',
+  //   state: 'NY',
+  //   zip: '10001',
+  //   country: 'USA',
+  // },
+
   address: {
-    street: '123 Business Avenue, Suite 500',
-    city: 'New York',
-    state: 'NY',
-    zip: '10001',
-    country: 'USA',
-  },
+  street: 'Lideta',
+  city: 'Addis Ababa',
+  // state: 'Addis Ababa',
+  // zip: 'Unknown',
+  country: 'Ethiopia',
+}
+,
   social: {
     linkedin: 'https://linkedin.com/company/futureforward',
     twitter: 'https://twitter.com/futureforward',
     facebook: 'https://facebook.com/futureforward',
   },
+  // location: {
+  //   lat: 40.7128,
+  //   lng: -74.0060,
+  // },
+
   location: {
-    lat: 40.7128,
-    lng: -74.0060,
-  },
+  lat: 9.011554,
+  lng: 38.734938,
+}
+
 };
 
 export const ACHIEVEMENTS = [
-  { label: 'Clients Served', value: 250, suffix: '+' },
-  { label: 'Projects Completed', value: 500, suffix: '+' },
-  { label: 'Years Experience', value: 15, suffix: '+' },
-  { label: 'Success Rate', value: 98, suffix: '%' },
+  { label: 'Clients Served', value: 12, suffix: '+' },
+  { label: 'Projects Completed', value: 23, suffix: '+' },
+  { label: 'Years Experience', value: 2, suffix: '+' },
+  { label: 'Success Rate', value: 100, suffix: '%' },
 ];
 
 export const NAVIGATION_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
+  { label: 'Home', href: '/' }, 
   { label: 'Services', href: '/services' },
   { label: 'Industries', href: '/industries' },
+   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
 

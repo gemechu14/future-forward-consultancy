@@ -34,19 +34,19 @@ export default function HeroSection({
             <motion.div
               key={i}
               className="absolute w-2 h-2 bg-primary/20 rounded-full"
-              initial={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-              }}
-              animate={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-              }}
-              transition={{
-                duration: Math.random() * 10 + 20,
-                repeat: Infinity,
-                repeatType: 'reverse',
-              }}
+              // initial={{
+              //   x: Math.random() * window.innerWidth,
+              //   y: Math.random() * window.innerHeight,
+              // }}
+              // animate={{
+              //   x: Math.random() * window.innerWidth,
+              //   y: Math.random() * window.innerHeight,
+              // }}
+              // transition={{
+              //   duration: Math.random() * 10 + 20,
+              //   repeat: Infinity,
+              //   repeatType: 'reverse',
+              // }}
             />
           ))}
         </div>
@@ -126,10 +126,10 @@ export default function HeroSection({
             className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto pt-12"
           >
             {[
-              { value: '250+', label: 'Clients' },
-              { value: '500+', label: 'Projects' },
-              { value: '15+', label: 'Years' },
-              { value: '98%', label: 'Success' },
+              { value: '12+', label: 'Clients' },
+              { value: '23+', label: 'Projects' },
+              { value: '2+', label: 'Years' },
+              { value: '100%', label: 'Success' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
@@ -142,7 +142,7 @@ export default function HeroSection({
             ))}
           </motion.div>
         </div>
-      </div>
+      </div>  
 
       {/* Scroll Indicator */}
       <motion.div

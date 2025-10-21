@@ -82,7 +82,7 @@ export default function AboutPreview() {
                 transition={{ duration: 0.3 }}
                 className="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl"
               >
-                <span className="text-white font-bold text-4xl">FF</span>
+                <span className="text-white font-bold text-4xl">FFdfdfdfdf</span>
               </motion.div>
 
               {/* Floating Elements */}

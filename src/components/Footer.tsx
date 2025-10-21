@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">FF</span>
+                <span className="text-white font-bold text-xl">FF1</span>
               </div>
               <span className="text-lg font-bold text-white">
                 Future Forward

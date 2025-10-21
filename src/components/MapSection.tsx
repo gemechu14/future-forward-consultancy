@@ -50,7 +50,7 @@ export default function MapSection() {
                 </h4>
                 <address className="text-gray-600 dark:text-gray-400 not-italic">
                   {address.street}<br />
-                  {address.city}, {address.state} {address.zip}<br />
+                  {/* {address.city}, {address.state} {address.zip}<br /> */}
                   {address.country}
                 </address>
               </div>

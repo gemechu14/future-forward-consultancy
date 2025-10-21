@@ -32,7 +32,7 @@ export default function Navbar() {
       
       // Only run on home page
       if (pathname === '/') {
-        const sections = ['hero', 'services', 'industries', 'about', 'contact-form', 'contact'];
+        const sections = ['hero', 'services', 'industries', 'about', 'contact'];
         const scrollPosition = window.scrollY + 100;
         
         for (const section of sections) {
@@ -91,7 +91,7 @@ export default function Navbar() {
       if (href === '/services' && activeSection === 'services') return true;
       if (href === '/industries' && activeSection === 'industries') return true;
       if (href === '/about' && activeSection === 'about') return true;
-      if (href === '/contact' && (activeSection === 'contact-form' || activeSection === 'contact')) return true;
+      if (href === '/contact' && activeSection === 'contact') return true;
     }
     
     return false;
