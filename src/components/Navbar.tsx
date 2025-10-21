@@ -97,6 +97,15 @@ export default function Navbar() {
     return false;
   };
 
+  // Ensure there's always an active link - if none found, default to Home
+  const hasActiveLink = NAVIGATION_LINKS.some(link => isActiveLink(link.href));
+  const isActiveLinkWithFallback = (href: string) => {
+    if (isActiveLink(href)) return true;
+    // If no link is active and this is the Home link, make it active as fallback
+    if (!hasActiveLink && href === '/') return true;
+    return false;
+  };
+
   return (
     <>
       <motion.nav
@@ -155,7 +164,7 @@ export default function Navbar() {
                     key={link.href}
                     onClick={handleClick}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                      isActiveLink(link.href)
+                      isActiveLinkWithFallback(link.href)
                         ? 'text-primary bg-primary/10'
                         : 'text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
                     }`}
@@ -273,7 +282,7 @@ export default function Navbar() {
                           <button
                             onClick={handleClick}
                             className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all ${
-                              isActiveLink(link.href)
+                              isActiveLinkWithFallback(link.href)
                                 ? 'bg-primary text-white shadow-lg'
                                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                             }`}
